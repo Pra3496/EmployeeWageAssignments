@@ -10,7 +10,7 @@ namespace EmployWage
     {
         int empCheck;
 
-        public EmployWageUC1(int empChk)
+        public EmployWage(int empChk)
         {
             this.empCheck = empChk;
         }
