@@ -20,7 +20,14 @@
             EmployeeWageUC3 empuc3 = new EmployeeWageUC3(empCheck);
             empuc3.Attendences();
 
+            Console.WriteLine("\nEmployeeWage UC - 4");
 
+            empCheck = random.Next(0, 3);
+            EmployeeWageUC4 empuc4 = new EmployeeWageUC4();
+            empuc4.Attendances(empCheck);
+
+
+           
 
 
 
