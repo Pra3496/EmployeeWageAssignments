@@ -4,9 +4,15 @@
     {
         static void Main(string[] args)
         {
-            EmployWage emp = new EmployWage();
+            Random random = new Random();
+            int empCheck = random.Next(0, 2);
+            
+            
 
-            emp.Attendencs();
+            empCheck = random.Next(0, 2);
+            EmployWageUC2 emp = new EmployWageUC2(empCheck);
+
+            emp.Attendences();
         }
     }
 }
