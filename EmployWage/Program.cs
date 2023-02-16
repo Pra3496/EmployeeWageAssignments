@@ -13,8 +13,9 @@
 
 
             empCheck = random.Next(0, 3);
-            EmployeeWageUC5 empuc5 = new EmployeeWageUC5();
-            empuc5.Attendences(empCheck);
+            RefactorCode empuc7 = new RefactorCode();
+
+            empuc7.MonthsHours();
 
 
 

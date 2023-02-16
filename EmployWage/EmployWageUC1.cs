@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace EmployWage
 {
-    internal class EmployWage
+    internal class EmployWageUC1
     {
         int empCheck;
 
-        public EmployWage(int empChk)
+        public EmployWageUC1(int empChk)
         {
             this.empCheck = empChk;
         }
