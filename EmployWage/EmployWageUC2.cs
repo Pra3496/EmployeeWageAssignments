@@ -14,7 +14,7 @@ namespace EmployWage
         {
             this.empCheck = empChk;
         }
-        public void Attendences()
+        public void attendences()
         {
             int IS_PRESENT = 1;
             int EMP_RATE_PER_HOUR = 20;

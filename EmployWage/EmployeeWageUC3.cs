@@ -14,7 +14,7 @@ namespace EmployWage
         {
             this.empCheck = empChk;
         }
-        public void Attendences()
+        public void attendences()
         {
             int IS_FULLTIME = 1;
             int IS_PARTTIME = 2;

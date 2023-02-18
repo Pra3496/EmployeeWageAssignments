@@ -8,14 +8,18 @@ namespace EmployWage
 {
     internal class EmployeeWageUC4
     {
+        int empCheck;
+
         const int IS_PARTTIME = 1;
         const int IS_FULLTIME = 2;
         const int EMP_RATE_PER_HRS = 20;
 
+        public EmployeeWageUC4(int empCheck)
+        {
+            this.empCheck = empCheck;
+        }
 
-
-
-        public void Attendances(int empCheck)
+        public void attendances()
         {
             int empHrs = 0;
             int empWages = 0;

@@ -15,7 +15,7 @@ namespace EmployWage
             this.empCheck = empChk;
         }
 
-        public void Attendencs()
+        public void attendencs()
         {
             int IS_PRESENT = 1;
             if (this.empCheck == IS_PRESENT)

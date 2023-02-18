@@ -6,28 +6,25 @@ using System.Threading.Tasks;
 
 namespace EmployWage
 {
-    internal class EmployeeWageUC5
+    internal class EmployeeWageUC7
     {
         int empCheck;
-
         public const int IS_PARTTIME = 1;
         public const int IS_FULLTIME = 2;
         public const int EMP_RATE_PER_HRS = 20;
         public const int NUM_OF_WORKING_DAYS = 20;
+        public const int MAX_RATE_IN_MONTH = 100;
 
-        public EmployeeWageUC5(int empCheck)
+        public EmployeeWageUC7(int empCheck)
         {
             this.empCheck = empCheck;
         }
-        public void attendences()
+        public void computeEmpWage()
         {
-            int empHrs = 0;
-            int empWages = 0;
-            int totalWages = 0;
-            int Day;
-
-            for (Day = 1; Day <= NUM_OF_WORKING_DAYS; Day++)
+            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+            while (totalEmpHrs < MAX_RATE_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
             {
+                totalWorkingDays++;
                 switch (empCheck)
                 {
                     case IS_PARTTIME:
@@ -41,11 +38,11 @@ namespace EmployWage
                         break;
                 }
 
-                empWages = empHrs * EMP_RATE_PER_HRS;
-                Console.WriteLine("Employee wages:" + empWages);
+                totalEmpHrs = totalEmpHrs + empHrs;
+                Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs: " + empHrs);
             }
-            totalWages = totalWages + empWages;
-            Console.WriteLine("Total monthly wages of an employee is: " + totalWages);
+            int totalEmpWages = totalEmpHrs * EMP_RATE_PER_HRS;
+            Console.WriteLine("Total Employee wages:" + totalEmpWages);
         }
     }
 }
