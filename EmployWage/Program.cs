@@ -12,7 +12,7 @@ namespace EmployWage
 
             Console.WriteLine("Welcome to Employee Wages Prgrams");
             Console.WriteLine("Please enter option given below");
-            Console.WriteLine("1:Employee is present or absent UC1\n2:Employee Wage UC2\n3:Employee wage UC3\n4:Employee wage UC4\n5:Employee wage UC5\n6:Employee wage UC6\n7:Refactor Employee wage UC7\n8:Refactor to compute multiple company wages\n0:Exit the Application");
+            Console.WriteLine("1:Employee is present or absent UC1\n2:Employee Wage UC2\n3:Employee wage UC3\n4:Employee wage UC4\n5:Employee wage UC5\n6:Employee wage UC6\n7:Refactor Employee wage UC7\n8:Refactor to compute multiple company wages");
             int option = Convert.ToInt32(Console.ReadLine());
             //Switch case to call different method 
             switch (option)
@@ -66,8 +66,22 @@ namespace EmployWage
                     int total = empuc8.computeEmpWage(company,empRatePerHrs,numOfWorkingdays,maxHrsPerMonth,empCheck);
                     Console.WriteLine("Total Employee wages:" + total);
                     break;
+                case 9:
+                    empCheck = random.Next(0, 3);
+                    Console.Write("\nEnter Company Name : ");
+                    company = Convert.ToString(Console.ReadLine());
+                    Console.Write("\nEnter Rate per Hours : ");
+                    empRatePerHrs = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("\nEnter Number of Working Days : ");
+                    numOfWorkingdays = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("\nEnter Maximum Hour per Month : ");
+                    maxHrsPerMonth = Convert.ToInt32(Console.ReadLine());
+                    EmployeeWageUC9 empuc9 = new EmployeeWageUC9(company, empRatePerHrs, numOfWorkingdays, maxHrsPerMonth, empCheck);
+                    empuc9.computeEmpWage();
+                    Console.WriteLine(empuc9.toString());
+                    break;
                 case 0:
-                    Console.WriteLine("Thank you For Using this Application");
+                    Console.WriteLine("Thank You For Using this Application");
                     break;
                 default:
                     Console.WriteLine("Please enter right option");
