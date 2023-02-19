@@ -111,6 +111,7 @@ namespace EmployWage
                         break;
                     case 9:
                         Console.WriteLine("\n-------{ Employee Wage UC-9 }-------\n");
+
                         empCheck = random.Next(0, 3);
                         Console.Write("\nEnter Company Name : ");
                         company = Convert.ToString(Console.ReadLine());
@@ -130,6 +131,7 @@ namespace EmployWage
                         break;
                     case 10:
                         Console.WriteLine("\n-------{ Employee Wage UC-10 }-------\n");
+
                         Console.Write("\nEnter Company Name : ");
                         company = Convert.ToString(Console.ReadLine());
                         Console.Write("\nEnter Rate per Hours : ");
@@ -146,7 +148,26 @@ namespace EmployWage
                         Console.Write("\n\nPress any Key....");
                         Console.ReadKey();
                         break;
-                    
+                    case 11:
+                        Console.WriteLine("\n-------{ Employee Wage UC-11 }-------\n");
+
+                        Console.Write("\nEnter Company Name : ");
+                        company = Convert.ToString(Console.ReadLine());
+                        Console.Write("\nEnter Rate per Hours : ");
+                        empRatePerHrs = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("\nEnter Number of Working Days : ");
+                        numOfWorkingdays = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("\nEnter Maximum Hour per Month : ");
+                        maxHrsPerMonth = Convert.ToInt32(Console.ReadLine());
+
+                        EmployeeWageUC11 empuc11 = new EmployeeWageUC11();
+                        empuc11.addCompanyEmpWage(company, empRatePerHrs, numOfWorkingdays, maxHrsPerMonth);
+                        empuc11.computeEmpWage();
+
+                        Console.Write("\n\nPress any Key....");
+                        Console.ReadKey();
+                        break;
+
                     case 0:
                         Console.WriteLine("\n\nThank You For Using this Application");
                         flag = false;
