@@ -15,7 +15,7 @@ namespace EmployWage
             while (flag)
             {
                 Console.Clear();
-                Console.WriteLine("-------------------------------------------");
+                Console.WriteLine("===========================================");
                 Console.WriteLine("\nWelcome to Employee Wages Prgrams\n");
                 Console.WriteLine("Please enter option given below\n");
                 Console.WriteLine("1  : Employee Wage UC1");
@@ -163,6 +163,25 @@ namespace EmployWage
                         EmployeeWageUC11 empuc11 = new EmployeeWageUC11();
                         empuc11.addCompanyEmpWage(company, empRatePerHrs, numOfWorkingdays, maxHrsPerMonth);
                         empuc11.computeEmpWage();
+
+                        Console.Write("\n\nPress any Key....");
+                        Console.ReadKey();
+                        break;
+                    case 12:
+                        Console.WriteLine("\n-------{ Employee Wage UC-12 }-------\n");
+
+                        Console.Write("\nEnter Company Name : ");
+                        company = Convert.ToString(Console.ReadLine());
+                        Console.Write("\nEnter Rate per Hours : ");
+                        empRatePerHrs = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("\nEnter Number of Working Days : ");
+                        numOfWorkingdays = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("\nEnter Maximum Hour per Month : ");
+                        maxHrsPerMonth = Convert.ToInt32(Console.ReadLine());
+
+                        EmployeeWageUC12 empuc12 = new EmployeeWageUC12();
+                        empuc12.addCompanyEmpWage(company, empRatePerHrs, numOfWorkingdays, maxHrsPerMonth);
+                        empuc12.computeEmpWage();
 
                         Console.Write("\n\nPress any Key....");
                         Console.ReadKey();

@@ -1,41 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EmployWage
 {
-    internal class EmployeeWageUC11 : IcomputeEmpWage
+    internal class EmployeeWageUC12
     {
         public const int IS_PARTTIME = 1;
         public const int IS_FULLTIME = 2;
 
-        private  LinkedList<CompanyEmpWage>CompanyEmpWagesList;
+        private ArrayList CompanyEmpWagesList;
         private Dictionary<string, CompanyEmpWage> CompanyToEmpWagMap;
 
 
-        public EmployeeWageUC11()
+        public EmployeeWageUC12()
         {
-            this.CompanyEmpWagesList = new LinkedList<CompanyEmpWage>();
+            this.CompanyEmpWagesList = new ArrayList();
             this.CompanyToEmpWagMap = new Dictionary<string, CompanyEmpWage>();
         }
         public void addCompanyEmpWage(string company, int empRatePerHr, int numOfWorkingDays, int maxHrsPerMonth)
         {
-           CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHr, numOfWorkingDays, maxHrsPerMonth);
-           this.CompanyEmpWagesList.AddLast(companyEmpWage);
-            this.CompanyToEmpWagMap.Add(company, companyEmpWage);   
+            CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHr, numOfWorkingDays, maxHrsPerMonth);
+            this.CompanyEmpWagesList.Add(companyEmpWage);
+            this.CompanyToEmpWagMap.Add(company, companyEmpWage);
         }
         public void computeEmpWage()
         {
-            foreach(CompanyEmpWage companyEmpWage in this.CompanyEmpWagesList)
+            foreach (CompanyEmpWage companyEmpWage in this.CompanyEmpWagesList)
             {
                 companyEmpWage.SetTotalEmpWages(this.computeEmpWage(companyEmpWage));
                 Console.WriteLine(companyEmpWage.toString());
             }
         }
 
-        
+
         private int computeEmpWage(CompanyEmpWage companyEmpWage)
         {
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
