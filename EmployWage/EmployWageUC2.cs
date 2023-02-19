@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace EmployWage
 {
-    internal class EmployWageUC2
+    internal class EmployeeWageUC2
     {
         int empCheck;
 
-        public EmployWageUC2(int empChk)
+        public EmployeeWageUC2(int empChk)
         {
             this.empCheck = empChk;
         }
-        public void attendences()
+        public void computeEmpWage()
         {
             int IS_PRESENT = 1;
             int EMP_RATE_PER_HOUR = 20;

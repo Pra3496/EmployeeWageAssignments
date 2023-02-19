@@ -19,7 +19,7 @@ namespace EmployWage
             this.empCheck = empCheck;
         }
 
-        public void attendances()
+        public void computeEmpWage()
         {
             int empHrs = 0;
             int empWages = 0;
