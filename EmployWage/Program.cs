@@ -167,6 +167,7 @@ namespace EmployWage
                         Console.Write("\n\nPress any Key....");
                         Console.ReadKey();
                         break;
+
                     case 12:
                         Console.WriteLine("\n-------{ Employee Wage UC-12 }-------\n");
 
@@ -182,6 +183,26 @@ namespace EmployWage
                         EmployeeWageUC12 empuc12 = new EmployeeWageUC12();
                         empuc12.addCompanyEmpWage(company, empRatePerHrs, numOfWorkingdays, maxHrsPerMonth);
                         empuc12.computeEmpWage();
+
+                        Console.Write("\n\nPress any Key....");
+                        Console.ReadKey();
+                        break;
+
+                    case 13:
+                        Console.WriteLine("\n-------{ Employee Wage UC-13 }-------\n");
+
+                        Console.Write("\nEnter Company Name : ");
+                        company = Convert.ToString(Console.ReadLine());
+                        Console.Write("\nEnter Rate per Hours : ");
+                        empRatePerHrs = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("\nEnter Number of Working Days : ");
+                        numOfWorkingdays = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("\nEnter Maximum Hour per Month : ");
+                        maxHrsPerMonth = Convert.ToInt32(Console.ReadLine());
+
+                        EmployeeWageUC13 empuc13 = new EmployeeWageUC13();
+                        empuc13.addCompanyEmpWage(company, empRatePerHrs, numOfWorkingdays, maxHrsPerMonth);
+                        empuc13.computeEmpWage();
 
                         Console.Write("\n\nPress any Key....");
                         Console.ReadKey();

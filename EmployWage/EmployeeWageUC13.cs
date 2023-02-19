@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EmployWage
 {
-    internal class EmployeeWageUC12
+    internal class EmployeeWageUC13 : IcomputeEmpWage
     {
         public const int IS_PARTTIME = 1;
         public const int IS_FULLTIME = 2;
@@ -58,9 +59,11 @@ namespace EmployWage
                 }
 
                 totalEmpHrs = totalEmpHrs + empHrs;
-                
+
             }
             return totalEmpHrs * companyEmpWage.empRatePerHr;
+
+            Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs: " + empHrs);
         }
 
         public int getTotalWage(String company)
