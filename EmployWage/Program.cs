@@ -27,7 +27,11 @@ namespace EmployWage
                 Console.WriteLine("7  : Employee Wage UC7");
                 Console.WriteLine("8  : Employee Wage UC8");
                 Console.WriteLine("9  : Employee Wage UC9");
-                Console.WriteLine("10 : Employee Wage UC10\n");
+                Console.WriteLine("10 : Employee Wage UC10");
+                Console.WriteLine("11 : Employee Wage UC11");
+                Console.WriteLine("12 : Employee Wage UC12");
+                Console.WriteLine("13 : Employee Wage UC13");
+                Console.WriteLine("14 : Employee Wage UC14\n");
                 Console.WriteLine("Press 0 and Enter To Exit");
                 Console.WriteLine("\n===========================================\n");
                 Console.Write("ENTER YOUR CHOICE : ");
@@ -203,6 +207,26 @@ namespace EmployWage
                         EmployeeWageUC13 empuc13 = new EmployeeWageUC13();
                         empuc13.addCompanyEmpWage(company, empRatePerHrs, numOfWorkingdays, maxHrsPerMonth);
                         empuc13.computeEmpWage();
+
+                        Console.Write("\n\nPress any Key....");
+                        Console.ReadKey();
+                        break;
+
+                    case 14:
+                        Console.WriteLine("\n-------{ Employee Wage UC-14 }-------\n");
+
+                        Console.Write("\nEnter Company Name : ");
+                        company = Convert.ToString(Console.ReadLine());
+                        Console.Write("\nEnter Rate per Hours : ");
+                        empRatePerHrs = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("\nEnter Number of Working Days : ");
+                        numOfWorkingdays = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("\nEnter Maximum Hour per Month : ");
+                        maxHrsPerMonth = Convert.ToInt32(Console.ReadLine());
+
+                        EmployeeWageUC14 empuc14 = new EmployeeWageUC14();
+                        empuc14.addCompanyEmpWage(company, empRatePerHrs, numOfWorkingdays, maxHrsPerMonth);
+                        empuc14.computeEmpWage();
 
                         Console.Write("\n\nPress any Key....");
                         Console.ReadKey();

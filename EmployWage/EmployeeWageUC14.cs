@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace EmployWage
 {
-    internal class EmployeeWageUC13 : IcomputeEmpWage
+    internal class EmployeeWageUC14
     {
         public const int IS_PARTTIME = 1;
         public const int IS_FULLTIME = 2;
 
-        private ArrayList CompanyEmpWagesList;
+        private LinkedList<CompanyEmpWage> CompanyEmpWagesList;
         private Dictionary<string, CompanyEmpWage> CompanyToEmpWagMap;
 
 
-        public EmployeeWageUC13()
+        public EmployeeWageUC14()
         {
-            this.CompanyEmpWagesList = new ArrayList();
+            this.CompanyEmpWagesList = new LinkedList<CompanyEmpWage>();
             this.CompanyToEmpWagMap = new Dictionary<string, CompanyEmpWage>();
         }
         public void addCompanyEmpWage(string company, int empRatePerHr, int numOfWorkingDays, int maxHrsPerMonth)
         {
             CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHr, numOfWorkingDays, maxHrsPerMonth);
-            this.CompanyEmpWagesList.Add(companyEmpWage);
+            this.CompanyEmpWagesList.AddLast(companyEmpWage);
             this.CompanyToEmpWagMap.Add(company, companyEmpWage);
         }
         public void computeEmpWage()
@@ -59,14 +58,9 @@ namespace EmployWage
                 }
 
                 totalEmpHrs = totalEmpHrs + empHrs;
-
+                Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs: " + empHrs);
             }
-
-            Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs: " + empHrs);
-
             return totalEmpHrs * companyEmpWage.empRatePerHr;
-
-            
         }
 
         public int getTotalWage(String company)
